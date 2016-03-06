@@ -1,0 +1,8 @@
+item:
+    resource: "@AppBundle/Controller/Item/"
+    type:     admingenerator
+    prefix:   /
+
+# app:
+#     resource: "@AppBundle/Controller/"
+#     type:     annotation
