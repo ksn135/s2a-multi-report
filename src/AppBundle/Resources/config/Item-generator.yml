@@ -24,52 +24,40 @@ builders:
                 delete: ~
     excel:
         params: 
-            export: 
-               full:
-                -       id
-                -       title
-                -       code
-                -       guid
-                -       note
-               short:
-                -       id
-                -       code
-                -       title
-               simple:
-                -       title
+            export:  
+                full:
+                    credentials:     'hasRole("ROLE_A")'        
+                    show_button:     false
+                    icon:            fa-files-o 
+                    label:           Full report
+                    filename:        full-report.xlsx
+                    filetype:        Excel2007
+                    datetime_format: Y-m-d H:i:s
+                    display:
+                        -            id
+                        -            title
+                        -            code
+                        -            guid
+                        -            note
 
+                short:
+                    credentials:     'hasRole("ROLE_B")'        
+                    show_button:     true
+                    icon:            fa-files-o 
+                    label:           Show report
+                    filename:        Short-repot.xls
+                    filetype:        Excel5
+                    datetime_format: d.m.Y
+                    fields:          
+                      title:
+                        label:       Product name
+                    display:
+                        -            id
+                        -            code
+                        -            title
 
-               # full:
-               #    # credentials: 'hasRole("ROLE_ADMIN")'        
-               #    icon:   fa-files-o 
-               #    label:  Full report
-               #    filename: ~
-               #    filetype: ~
-               #    datetime_format: ~
-               #    fields: ~
-               #    display: 
-               #      - id
-               #      - title
-               #      - code
-               #      - guid
-               #      - note
-               # short:
-               #    # credentials: 'hasRole("ROLE_A")'        
-               #    icon:   fa-file-excel-o
-               #    label:  Short report
-               #    display: 
-               #      - id
-               #      - code
-               #      - title
-               # simple:
-               #    # credentials: 'hasRole("ROLE_B")'        
-               #    icon:   fa-table
-               #    label:  Simple report
-               #    fields:
-               #      fullName:
-               #        label:  List of items
-               #    display: 
-               #      - title
+                simple:
+                    -                title
 
     new:
         params:
